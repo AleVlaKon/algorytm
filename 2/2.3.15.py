@@ -12,8 +12,8 @@ def draw_field():
     for i in range(5, 30, 3):
         field[11][i] = n
         n += 1
-    # for i in range(3, 30):
-    #     field[10][i] = '-'
+    for i in range(3, 30):
+        field[10][i] = '-'
 
     field[10][31] = '>'
     field[10][33] = 'x'
