@@ -1,4 +1,4 @@
-
+from typing import Callable
 
 def draw_field():
     # draw field 34x12
@@ -24,6 +24,21 @@ def draw_field():
     return field
 
 
-for i in draw_field():
-    print(*i, sep='')
 
+
+def draw_graph(f: Callable):
+    field = draw_field()
+    for i in range(1, 10):
+        x_coord = 2 + i * 3
+        y_coord = 10 - f(i)
+        if y_coord >= 1:
+            field[y_coord][x_coord] = '*'
+    for i in field:
+        print(*i, sep='')
+
+def f(x):
+    if x in (1, 2):
+        return 1
+    return f(x - 1) + f(x - 2)
+
+draw_graph(f)
