@@ -1,3 +1,8 @@
+import razdel_2
+
+
+
+
 def is_point_in_rectangle(p:tuple[int], rect: list[tuple]) -> bool:
     x, y = p
     x1, y1 = rect[0] 
