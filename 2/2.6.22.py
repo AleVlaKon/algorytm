@@ -1,6 +1,5 @@
 def solve_quadritic(a: int, b: int, c: int) -> set:
     discriminant = b ** 2 - 4 * a * c
-
     result = set()
     
     if discriminant >= 0:
@@ -12,10 +11,7 @@ def solve_quadritic(a: int, b: int, c: int) -> set:
 
 def solve_linear(b: int, c: int) -> set:
     x = -c/b
-    y = b * x + c
-    result = set()
-    
-    return 
+    return {x}
 
 
 def quadratic_intersections(
@@ -30,20 +26,17 @@ def quadratic_intersections(
     result_b = b1 - b2
     result_c = c1 - c2
 
-    discriminant = result_b ** 2 - 4 * result_a * result_c
     result = set()
-    if discriminant >= 0:
-        x1 = (-result_b + discriminant ** 0.5)/(2 * result_a)
-        y1 = a1 * x1 ** 2 + b1 * x1 + c1
-        x2 = (-result_b - discriminant ** 0.5)/(2 * result_a)
-        y2 = a1 * x2 ** 2 + b1 * x2 + c1
+    
+    if result_a:
+        result_x = solve_quadritic(result_a, result_b, result_c)
+    else:
+        result_x = solve_linear(result_b, result_c)
+    
 
-        result.add((x1, y1))
-        result.add((x2, y2))
+    return result_x
     
-    return result
-    
-    
+
 
 
 print(quadratic_intersections(1, -2, 1, -1, -1, 7))
