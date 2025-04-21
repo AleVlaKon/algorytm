@@ -5,7 +5,7 @@ from zipfile import ZipFile
 
 import pytest
 
-filename = 'tests_5337574.zip'  # имя файла с тестами
+filename = 'tests_5337575.zip'  # имя файла с тестами
 module = 'testing_func'  # имя файла python, в котором вы решаете задачи
 test_fixtures = []
 
