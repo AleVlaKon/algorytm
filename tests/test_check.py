@@ -5,17 +5,14 @@ from zipfile import ZipFile
 
 import pytest
 
-filename = 'tests.zip'  # имя файла с тестами
-module = 'testing_func'       # имя файла python, в котором вы решаете задачи
+filename = 'tests_5337575.zip'  # имя файла с тестами
+module = 'testing_func'  # имя файла python, в котором вы решаете задачи
 test_fixtures = []
 
 with ZipFile(filename, 'r') as zf:
     files = zf.filelist
     for i in range(0, len(files), 2):
-        with (
-            zf.open(files[i]) as reply,
-            zf.open(files[i + 1]) as clue,
-        ):
+        with zf.open(files[i]) as reply, zf.open(files[i + 1]) as clue:
             reply = reply.read().decode('u8')
             clue = clue.read().decode('u8')
             test_fixtures.append((reply, clue))
