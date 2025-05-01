@@ -15,3 +15,18 @@ def next_power_of_two(power: int) -> int:
         len_i_to_the_power = floor(i * log10(2)) + 1
         result = result * 10 ** (len_i_to_the_power) + 2 ** i
     return result
+        
+
+
+# print(next_power_of_two(7))
+
+
+
+print(count_powers(2))  #1
+print(count_powers(24)) #2
+print(count_powers(248))  #3
+print(count_powers(24816))  #4
+print(count_powers(2481632))  #5
+print(count_powers(248163264))  #6
+print(count_powers(248163264128))   #7
+print(count_powers(248163264128256))   #8
