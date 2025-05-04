@@ -6,7 +6,7 @@ from zipfile import ZipFile
 import pytest
 
 filename = 'tests.zip'  # имя файла с тестами
-module = 'script'       # имя файла python, в котором вы решаете задачи
+module = 'testing_func'       # имя файла python, в котором вы решаете задачи
 test_fixtures = []
 
 with ZipFile(filename, 'r') as zf:
