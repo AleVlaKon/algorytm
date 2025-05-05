@@ -13,3 +13,7 @@ def drop_one_and_five(n):
                 new_n //= 10
             n = n % ten_in_power
     return new_n
+
+
+print(drop_one_and_five(10))
+
