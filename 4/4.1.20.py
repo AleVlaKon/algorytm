@@ -6,3 +6,6 @@ def snake(n):
             print('*'.rjust(n, " "))
         elif i % 4 == 3:
             print('*')
+
+
+snake(5)
