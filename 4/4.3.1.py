@@ -10,4 +10,3 @@ def fizz_buzz(n: int) -> list:
         else:
             result.append(i)
     return result
-
