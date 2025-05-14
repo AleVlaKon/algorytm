@@ -1,12 +1,9 @@
 def equilibrium(nums: list):
-    if len(nums) == 1:
-        return 0
-    for i in range(len(nums) - 1):
-        sum_left = sum(nums[:i])
-        sum_right = sum(nums[i+1:])
-        if sum_left == sum_right:
+    sum_left = 0
+    sum_right = sum(nums)
+    for i in range(len(nums)):
+        if sum_left == sum_right - sum_left - nums[i]:
             return i
-    if sum(nums) == nums[-1]:
-        return len(nums) - 1
+        sum_left += nums[i]
     return -1
 
