@@ -10,3 +10,7 @@ def equilibrium(nums: list):
         return len(nums) - 1
     return -1
 
+
+print(equilibrium([1, 3, 5, 2, 2]))
+print(equilibrium([1]))
+print(equilibrium([1, 2]))
