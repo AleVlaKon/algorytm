@@ -11,3 +11,6 @@ def parse_max(s: str):
         return -1
 
     return max(int(i) for i in list_of_digits)
+
+
+print(parse_max('01ab2c3d04'))
