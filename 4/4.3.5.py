@@ -3,3 +3,7 @@ def letter_by_sum(letters: list):
     sum_letters = sum([alphabet[i] for i in letters])
     asxii_letters = 'abcdefghijklmnopqrstuvwxyz'
     return asxii_letters[sum_letters % 26 - 1]
+
+print(letter_by_sum(['a', 'b']))              # 1 + 2 = 3
+print(letter_by_sum(['a', 'z']))              # 1 + 26 = 27
+print(letter_by_sum(['z', 'z']))              # 26 + 26 = 52
