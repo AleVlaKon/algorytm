@@ -1,5 +1,9 @@
-def letter_by_sum(letters: list):
-    alphabet = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8, 'i': 9, 'j': 10, 'k': 11, 'l': 12, 'm': 13, 'n': 14, 'o': 15, 'p': 16, 'q': 17, 'r': 18, 's': 19, 't': 20, 'u': 21, 'v': 22, 'w': 23, 'x': 24, 'y': 25, 'z': 26}
-    sum_letters = sum([alphabet[i] for i in letters])
-    asxii_letters = 'abcdefghijklmnopqrstuvwxyz'
-    return asxii_letters[sum_letters % 26 - 1]
+def is_perfect_possible(keys: list[str], answers: list[str]) -> bool:
+    first_compare = keys[0] == answers[0]
+    for key, answer in zip(keys[1:], answers[1:]):
+        if key == '*':
+            continue
+        compare_result = key == answer
+        if first_compare != compare_result:
+            return False
+    return True
