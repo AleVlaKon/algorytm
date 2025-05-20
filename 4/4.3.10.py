@@ -4,3 +4,5 @@ def count_days(cur: int) -> int:
         days += 1
         cur = (cur - 1) / 2
     return days
+
+print(count_days(5905580031))
