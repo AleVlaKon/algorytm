@@ -17,3 +17,12 @@ def is_order(nums: list[int], strict=True) -> bool:
         return vozr or ub
     else:
         return not_vozr or not_ub
+
+
+
+print(is_order([1, 2, 3, 4, 5], strict=True))
+print(is_order([1, 2, 2, 3, 3]))
+print(is_order([1, 2, 3, 4, 5], strict=False))
+print(is_order([-2, -1, 1, 2, 2, 3, 5], strict=False))
+print(is_order([1, 3, 2, 4, 5], strict=False))
+print(is_order([1], strict=True))
