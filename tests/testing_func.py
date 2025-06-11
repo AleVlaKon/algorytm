@@ -1,2 +1,3 @@
 def calculate_sum(n):
-    return n ** 2
+    result = (1 + n) / 2 * n    
+    return int(result) ** 2
