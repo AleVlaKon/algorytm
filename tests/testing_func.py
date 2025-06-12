@@ -1,8 +1,7 @@
-def get_exam_position(n: int, k: int) -> int:
-    if k % 2 != 0:
-        return k // 2 + 1
-    else:
-        if n % 2 == 0:
-            return n // 2 + k // 2
-        else:
-            return n // 2 + k // 2 + 1
+def count_solutions(n):
+    counter = 0
+    for x in range(1, n + 1):
+        for y in range(1, n + 1):
+            if n - 3 * x - 2 * y > 0:
+                counter += 1
+    return counter
