@@ -2,14 +2,14 @@ def diff_even_odd(a: int, b: int) -> int:
     if a % 2 == 0:
         first_chet = a
         first_nechet = a + 1
-    else:
+    elif a % 2 == 1:
         first_chet = a + 1
         first_nechet = a
 
     if b % 2 == 0:
         last_chet = b
         last_nechet = b - 1 
-    else:
+    elif b % 2 == 1:
         last_chet = b - 1
         last_nechet = b
     
@@ -20,3 +20,10 @@ def diff_even_odd(a: int, b: int) -> int:
     summ_nechet = (first_nechet + last_nechet) * n_nechet / 2
 
     return int(summ_chet - summ_nechet)
+
+
+
+
+
+
+print(diff_even_odd(3, 11)) #5
