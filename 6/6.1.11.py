@@ -1,6 +1,6 @@
-def linear_search(nums: list[int], target: int, reverse: bool = False) -> int:
+def linear_search(nums: list[int], target: int, reverse: bool=False) -> int:
     if reverse:
-        for i in range(len(nums) - 1, -1, -1):
+        for i in range(len(nums) - 1, 0, -1):
             if nums[i] == target:
                 return i
     else:
@@ -11,3 +11,5 @@ def linear_search(nums: list[int], target: int, reverse: bool = False) -> int:
 
 
 print(linear_search([1, 5, 7], 5))
+print(linear_search([2, 1, 7, 2], 2))
+print(linear_search([12, 4, 1], 9))
