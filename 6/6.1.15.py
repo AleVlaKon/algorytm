@@ -8,3 +8,8 @@ def nine_divisors(n: int) -> int:
         if j_count == 9:
             final_count += 1
     return final_count
+
+print(nine_divisors(100))     # 36, 100
+print(nine_divisors(10))
+print(nine_divisors(50))     # 36
+print(nine_divisors(300))    # 36, 100, 196, 225, 256
