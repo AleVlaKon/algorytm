@@ -1,10 +1,5 @@
-def nine_divisors(n: int) -> int:
-    final_count = 0
-    for i in range(1, n+1):
-        j_count = 0
-        for j in range(1, i+1):
-            if i % j == 0:
-                j_count += 1
-        if j_count == 9:
-            final_count += 1
-    return final_count
+def doubling_the_value(nums: list[int], value: int) -> int:
+    for i in nums:
+        if i == value:
+            value *= 2
+    return value
