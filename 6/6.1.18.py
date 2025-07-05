@@ -1,5 +1,3 @@
-
-
 def count_occurrences(nums, target, start, end):
     count = 0
     for i in range(start, end):
@@ -7,9 +5,3 @@ def count_occurrences(nums, target, start, end):
             count += 1
     return count
 
-import random
-
-random.seed(21312)
-data = [random.randint(-1000, 1000) for _ in range(10**5)]
-
-print(count_occurrences(data, 0, 0, 10**5))
