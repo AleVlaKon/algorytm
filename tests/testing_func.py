@@ -1,7 +1,6 @@
-def check_letters(s: str) -> str:
-    result = ''
-    lower_s = s.lower()
-    alphebet = 'abcdefghijklmnopqrstuvwxyz'
-    for i in range(len(alphebet)):
-        result += str(int(alphebet[i] in lower_s))
-    return result
+def find_peaks(nums):
+    count = 0    
+    for i in range(1, len(nums)-1):
+        if nums[i-1] < nums[i] > nums[i+1]:
+            count += 1
+    return count 
