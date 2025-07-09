@@ -9,3 +9,14 @@ def lowercase_before_uppercase(s: str) -> bool:
         if s[char] == s[char].lower():
             return False
     return True
+
+
+
+
+
+print(lowercase_before_uppercase('beeGEEK'))
+print(lowercase_before_uppercase('BEEgeek'))
+print(lowercase_before_uppercase('BeeGeek'))
+print(lowercase_before_uppercase('beegeek'))
+print(lowercase_before_uppercase('BEEGEEK'))
+print(lowercase_before_uppercase('b'))
