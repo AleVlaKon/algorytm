@@ -43,3 +43,11 @@ def sequence_type(nums):
     
     return 'RANDOM'
 
+
+
+print(sequence_type([1, 1, 1, 1, 1]))
+print(sequence_type([1, 2, 3, 4, 5]))
+print(sequence_type([1, 1, 2, 2, 3]))
+print(sequence_type([5, 4, 3, 2, 1]))
+print(sequence_type([5, 5, 4, 4, 3]))
+print(sequence_type([1, 3, -2, 5, -4]))
