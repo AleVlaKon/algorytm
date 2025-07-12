@@ -17,3 +17,6 @@ def add_one(digits: list[int]) -> list[int]:
     return digits
 
 
+
+print(add_one([9, 9, 9]))
+print(add_one([1, 2, 3]))    # число 123
