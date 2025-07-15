@@ -10,5 +10,6 @@ def is_possible_to_split(nums: list[int]) -> bool:
         return True
     return False
 
-
 print(is_possible_to_split([3, 3, 3, 3]))
+print(is_possible_to_split([3, 2, 2, 3]))
+print(is_possible_to_split([1, 2, 3, 4]))
