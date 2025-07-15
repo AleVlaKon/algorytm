@@ -9,13 +9,10 @@ def adjacent_parity(nums: list[int]):
         else:
             evens += 1
 
-    if odds == 0 or evens == 0:
-        result = True
-    if len_nums % 2 == 1 and abs(odds - evens) == 1:
+
+    if abs(odds - evens) in (0, 1, len_nums):
         result = True
 
-    elif len_nums % 2 == 0 and abs(odds - evens) == 0:
-        result = True
 
     return result
 
