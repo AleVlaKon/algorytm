@@ -1,14 +1,14 @@
-from collections import Counter
-
-
-def is_possible_to_split(nums: list[int]) -> bool:
-    res = Counter(nums)
-    res2 = res.most_common()
-    if len(res2) == 1:
-        return True
-    if res2[0][1] == res2[1][1] and len(res) == 2:
-        return True
-    return False
-
-
-print(is_possible_to_split([3, 3, 3, 3]))
+def find_majority_element(nums: list[int]):
+    majority_element = nums[0]
+    counter = 0
+    for num in nums:
+        if num == majority_element:
+            counter += 1
+        else:
+            counter -= 1
+        if counter == 0:
+            majority_element = num
+    
+    if counter == 0:
+        return -1
+    return majority_element
