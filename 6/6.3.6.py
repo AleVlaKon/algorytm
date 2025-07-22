@@ -20,11 +20,3 @@ def can_nest(nums1: list[int], nums2: list[int]) -> bool:
     if min_b > min_a and max_b < max_a:
         return True
     return False
-
-
-print(can_nest([1, 2, 3, 4], [0, 6]))
-print(can_nest([4, 0], [3, 1]))
-print(can_nest([1, 2, 3, 4], [2, 3]))
-print(can_nest([9, 9, 8], [8, 9]))
-print(can_nest([1], [1]))  
-print(can_nest([-1, 1, -2], [-3, 2, 0]))
