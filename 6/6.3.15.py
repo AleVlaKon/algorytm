@@ -1,15 +1,15 @@
-def max_consecutive_ones(nums):
-    count = 0
-    max_count = 0
-    for i in range(len(nums)):
-        if nums[i]:
-            count += 1
-            if count > max_count:
-                max_count = count
-        else:
-            count = 0
+from itertools import groupby
 
-    return max_count
+
+def max_consecutive_ones(nums):
+    groups = groupby(nums)
+    result = 0
+    for key, value in groups:
+        sum_values = sum(value)
+        if key == 1 and sum_values > result:
+            result = sum_values
+
+    return result
 
 
 print(max_consecutive_ones([1, 1, 0, 1, 1, 1]))
