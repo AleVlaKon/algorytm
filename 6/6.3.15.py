@@ -1,13 +1,13 @@
 def max_consecutive_ones(nums):
-    count = 1
+    count = 0
     max_count = 0
-    for i in range(1, len(nums)):
-        if nums[i-1] and nums[i]:
+    for i in range(len(nums)):
+        if nums[i]:
             count += 1
             if count > max_count:
                 max_count = count
         else:
-            count = 1
+            count = 0
 
     return max_count
 
