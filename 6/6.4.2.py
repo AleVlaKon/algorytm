@@ -15,3 +15,8 @@ def min_difference(num: int) -> int:
             min_del = j - i
 
     return min_del
+
+print(min_difference(2))
+print(min_difference(143))
+
+
