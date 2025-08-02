@@ -1,4 +1,3 @@
-
 def steps_to_max(nums: list[int]) -> int:
     max_element = nums[0]
     count = 1
@@ -14,3 +13,10 @@ def steps_to_max(nums: list[int]) -> int:
 
     return result
 
+
+
+print(steps_to_max([2, 3, 4]))    # 2 -> 3 -> 4; 3 -> 4
+
+print(steps_to_max([3, 2, 3]))    # 2 -> 3
+print(steps_to_max([3, 3, 3]))    # 0
+print(steps_to_max([-1, -2, -3]))    # -2 -> -1; -3 -> -2 -> -1
