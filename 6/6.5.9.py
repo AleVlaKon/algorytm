@@ -13,3 +13,6 @@ def third_max_value(nums):
         elif num > third_max:
             third_max = num
     return third_max
+
+
+print(third_max_value([4, 8, 6, 10]))
