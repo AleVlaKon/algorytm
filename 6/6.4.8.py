@@ -16,3 +16,11 @@ def max_sum(nums):
     if not check_num: 
         return -1
     return result
+
+
+print(max_sum([1, -2, -3, 4]))
+print(max_sum([1, -2, 3, 4, -5]))
+print(max_sum([-1, 2, 3, -5, 6, 7, -8]))
+print(max_sum([1, 2, -3, 4, 5]))
+print(max_sum([1, 2, 3, 4, 5]))    
+print(max_sum([-1, -2]))     
