@@ -1,15 +1,10 @@
-def third_max_value(nums):
-    first_max = float('-inf')
-    second_max = float('-inf')
-    third_max = float('-inf')
-    for num in nums:
-        if num > first_max:
-            third_max = second_max
-            second_max = first_max 
-            first_max = num
-        elif num > second_max:
-            third_max = second_max 
-            second_max = num
-        elif num > third_max:
-            third_max = num
-    return third_max
+def find_silver_score(scores):
+    gold_medal = float('-inf')
+    silver_medal = float('-inf')
+    for ball in scores:
+        if ball > gold_medal:
+            silver_medal = gold_medal
+            gold_medal = ball
+        elif ball > silver_medal and ball != gold_medal:
+            silver_medal = ball
+    return silver_medal
