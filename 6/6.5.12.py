@@ -21,3 +21,6 @@ def max_product_of_three(nums):
         elif num < second_min:
             second_min = num
     return max(first_max * second_max * third_max, first_min * second_min * first_max)
+
+print(max_product_of_three([-5, -2, 4, 2, 4]))
+print(max_product_of_three([-1, -2, -3]))
