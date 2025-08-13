@@ -4,11 +4,12 @@ def binary_search(data, target):        # data – список чисел, targ
         middle = (left + right) // 2
         elem = data[middle]
         if elem == target:
-            return left, right
+            return True
         if elem < target:
             left = middle + 1
         else:
             right = middle - 1
-    return left, right
+    print(left, right)
+    return False
 
-print(binary_search([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 5))
+print(binary_search([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 11))
