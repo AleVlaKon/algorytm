@@ -11,3 +11,6 @@ def bounded_binary_search(nums, target, left=0, right=None):
         if elem > target:
             right = middle - 1
     return -1
+
+
+print(bounded_binary_search([1], 1,left=0))
