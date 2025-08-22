@@ -4,15 +4,7 @@ def get_closest_element(nums, target):
     while left <= right:
         middle = (right + left) // 2
         elem = nums[middle]
-        if min_elem == None:
-            min_elem = elem
-        else:
-            min_diff = abs(elem - target)
-            elem_diff = abs(min_elem - target)
-            if elem_diff < min_diff:
-                min_elem = elem
-            elif min_diff == elem_diff and elem > min_elem:
-                min_elem = elem
+        min_elem = min(nums[left], nums[right], key=lambda x: abs(target - x))
             
 
         if target < elem: 
