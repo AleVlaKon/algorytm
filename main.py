@@ -29,7 +29,7 @@ def excel_to_word_with_formatting(excel_path, sheet_name, word_path):
 excel_path = r"E:/Downloads/PortableGit/algorytm/Смета.xlsx"  # Полный путь к Excel
 sheet_name = "Ресурсная смета 14 граф"           # Название листа
 word_path = r"E:/Downloads/PortableGit/algorytm/output.docx"   # Куда сохранить Word
-
+excel_to_word_with_formatting(excel_path, sheet_name, word_path)
 
 def get_last_cell(file_path):
     # Запускаем Excel
