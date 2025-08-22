@@ -4,7 +4,9 @@ def get_closest_element(nums, target):
     while left <= right:
         middle = (right + left) // 2
         elem = nums[middle]
-        min_elem = min(nums[left], nums[right], key=lambda x: abs(target - x))
+        left_num = nums[left]
+        right_num = nums[right]
+        
             
 
         if target < elem: 
