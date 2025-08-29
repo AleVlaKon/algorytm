@@ -18,18 +18,20 @@ def excel_to_word_with_formatting(excel_path, sheet_name, word_path):
     word.Selection.PasteExcelTable(False, False, False)  # Вставка с форматированием
     
     # Сохранение и закрытие
+    excel.CutCopyMode = False  # Очищает буфер обмена Excel
     doc.SaveAs(word_path)
     doc.Close()
     wb.Close()
+    
     excel.Quit()
     word.Quit()
     print(f"Таблица скопирована в Word с сохранением форматирования: {word_path}")
 
 # Пример использования
-excel_path = r"E:/Downloads/PortableGit/algorytm/Смета.xlsx"  # Полный путь к Excel
+excel_path = r"D:\Users\av.kontikov\Downloads\PortableGit\algorytm/Смета.xlsx"  # Полный путь к Excel
 sheet_name = "Ресурсная смета 14 граф"           # Название листа
-word_path = r"E:/Downloads/PortableGit/algorytm/output.docx"   # Куда сохранить Word
-excel_to_word_with_formatting(excel_path, sheet_name, word_path)
+word_path = r"D:\Users\av.kontikov\Downloads\PortableGit\algorytm/output.docx"   # Куда сохранить Word
+
 
 def get_last_cell(file_path):
     # Запускаем Excel
@@ -61,7 +63,8 @@ def get_last_cell(file_path):
         workbook.Close(False)
         excel.Quit()
 
-file_path = r'E:/Downloads/PortableGit/algorytm/Смета.xlsx'
-last_cell_info = get_last_cell(file_path)
-print(f"Последняя ячейка: {last_cell_info['address']}")
-print(f"Значение: {last_cell_info['value']}")
+file_path = r'D:\Users\av.kontikov\Downloads\PortableGit\algorytm/Смета.xlsx'
+# last_cell_info = get_last_cell(file_path)
+excel_to_word_with_formatting(excel_path, sheet_name, word_path)
+# print(f"Последняя ячейка: {last_cell_info['address']}")
+# print(f"Значение: {last_cell_info['value']}")
