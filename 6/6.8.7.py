@@ -5,7 +5,7 @@ def exponential_binary_search(data, target):     # data – набор чисе�
         right *= 2
         
     left = right // 2
-
+    
     while left <= right:
         middle = (left + right) // 2
         elem = data[middle]
@@ -19,5 +19,5 @@ def exponential_binary_search(data, target):     # data – набор чисе�
     return False
 
 data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-target = 7
+target = 1
 exponential_binary_search(data, target)
