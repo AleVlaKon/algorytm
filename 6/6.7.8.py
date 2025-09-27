@@ -12,3 +12,11 @@ def equal(nums):
         elif elem < middle:
             left = middle + 1
     return potential_index
+
+
+print(equal([-4, -2, 2, 4, 6]))
+print(equal([-1, 0, 1, 2, 3, 4]))
+print(equal([0]))
+print(equal([0, 1, 2, 3, 4, 5]))
+print(equal([-5, -4, -3, -2, -1, 0]))
+print(equal([1, 2]))
