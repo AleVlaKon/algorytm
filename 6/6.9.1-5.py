@@ -1,10 +1,6 @@
 import time
 
 
-def f(x):
-    return 99 * x**3 - 300 * x**2 - 30000 * x - 1000000
-
-
 epsilon = 1 / 10 ** 14
 left, right = 1, 10 ** 10
 start_time = time.time()

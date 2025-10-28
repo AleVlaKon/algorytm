@@ -11,4 +11,7 @@ def cube_root(num: int):
         else:
             right = middle
 
-    return round((left + right) / 2, 5)
+    return ((left + right) / 2)
+
+
+print(cube_root(8))
