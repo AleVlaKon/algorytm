@@ -1,23 +1,23 @@
+import time
+
+
 def f(x):
-    return x**7 + 5 * x**2 - 2
+    return 99 * x**3 - 300 * x**2 - 30000 * x - 1000000
 
 
-epsilon = 0.000001
-results = []
-for i in range(-2, 1):
-    left = i
-    right = i + 1
-    while right - left > epsilon:
-        middle = (right + left) / 2
+epsilon = 1 / 10 ** 14
+left, right = 1, 10 ** 10
+start_time = time.time()
+while right - left > epsilon:
+    middle = (right + left) / 2
 
-        if f(middle) * f(right) < 0:
-            left = middle
+    if f(middle) * f(right) < 0:
+        left = middle
 
-        else:
-            right = middle
+    else:
+        right = middle
 
-    results.append(round((left + right) / 2, 6))
+end_time = time.time()
+print(end_time - start_time)
+print((left + right) / 2)
 
-
-
-print(results)
