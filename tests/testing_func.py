@@ -1,14 +1,13 @@
-def equal(nums):
-    left, right = 0, len(nums) - 1
-    potential_index = -1
-    while left <= right:
-        middle = (right + left) // 2
-        elem = nums[middle]
-        if elem == middle:
-            potential_index = middle
-            right = middle - 1
-        elif elem > middle:
-            right = middle - 1
-        elif elem < middle:
-            left = middle + 1
-    return potential_index
+def sort_by_digit_and_value(nums):
+    len_nums = len(nums)
+
+    for i in range(len(nums) - 1):
+        min_index = i
+
+        for j in range(i + 1, len_nums):
+            if abs(nums[j]) % 10 > abs(nums[min_index]) % 10:
+                min_index = j
+            elif abs(nums[j]) % 10 == abs(nums[min_index]) % 10 and nums[j] < nums[min_index]:
+                min_index = j
+
+        nums[i], nums[min_index] = nums[min_index], nums[i]
