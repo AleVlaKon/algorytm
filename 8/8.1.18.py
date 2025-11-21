@@ -13,3 +13,8 @@ def sort_like_nums(nums):
             if key_function(nums[j]) < key_function(nums[key_index]):
                 key_index = j
         nums[i], nums[key_index] = nums[key_index], nums[i]
+
+
+nums = [2, 1, [2], 3, [3]]
+sort_like_nums(nums)
+print(nums)
