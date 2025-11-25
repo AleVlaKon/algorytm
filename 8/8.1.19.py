@@ -10,3 +10,9 @@ def alter_sort(nums):
             if condition(nums[j], nums[key_index]):
                 key_index = j
         nums[i], nums[key_index] = nums[key_index], nums[i]
+
+
+
+nums = [1, 2, 3, 4, 5]
+alter_sort(nums)
+print(nums)
