@@ -1,3 +1,4 @@
+
 def sort_except_one(nums, a):
     n = len(nums)
     for i in range(n - 1):
@@ -11,7 +12,6 @@ def sort_except_one(nums, a):
                     key_index = j
         nums[i], nums[key_index] = nums[key_index], nums[i]
 
-
-# nums = [5, 1, 3, 2, 4]
-# sort_except_one(nums, 4)
-# print(nums)
+nums = [5, 1, 3, 2, 4]
+sort_except_one(nums, 4)
+print(nums)
