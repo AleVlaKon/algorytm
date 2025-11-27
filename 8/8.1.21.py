@@ -11,3 +11,16 @@ def sort_only_odds(nums):
                 if nums[j] < nums[key_index]:
                     key_index = j
         nums[i], nums[key_index] = nums[key_index], nums[i]
+
+
+nums = [3, 7, 5, 1, 9]
+sort_only_odds(nums)
+print(nums)
+
+nums = [2, 8, 4, 0, 6]
+sort_only_odds(nums)
+print(nums)
+
+nums = [-3, -8, -6, -5, -4, -1]
+sort_only_odds(nums)
+print(nums)
