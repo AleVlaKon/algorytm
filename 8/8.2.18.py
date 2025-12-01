@@ -11,3 +11,10 @@ def k_swaps_to_sort(n, k):
                 k -= 1
     
     return nums
+
+
+print(k_swaps_to_sort(10, 45))
+print(k_swaps_to_sort(5, 10))
+print(k_swaps_to_sort(5, 1))
+print(k_swaps_to_sort(1, 0))
+print(k_swaps_to_sort(5, 3))
