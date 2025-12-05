@@ -10,3 +10,10 @@ def insertion_sort(nums):
             j += 1
 
         nums[j - 1] = item
+
+
+nums = [3, 2, 2, 1, 3, 3]
+insertion_sort(nums)
+print(nums)
+
+            
