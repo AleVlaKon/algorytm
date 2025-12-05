@@ -1,19 +1,15 @@
-def insertion_sort(nums):
-    n = len(nums)
+def insertion_sort(data):
+	n = len(data)
+	
+	for i in range(1, n):
+		item = data[i]
+		j = i - 1
+		
+		while j >= 0 and item > data[j]: 
+			data[j + 1] = data[j]        
+			j -= 1                     
+			
+			
+		data[j + 1] = item 
 
-    for i in range(n - 2, -1, -1):
-        item = nums[i]
-        j = i + 1
 
-        while j < n and item < nums[j]:
-            nums[j - 1] = nums[j]
-            j += 1
-
-        nums[j - 1] = item
-
-
-nums = [3, 2, 2, 1, 3, 3]
-insertion_sort(nums)
-print(nums)
-
-            
