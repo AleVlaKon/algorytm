@@ -13,6 +13,3 @@ def least_frequent_number(data):
 			min_value = num
 			
 	return counts.index(min_value)
-
-print(least_frequent_number([1, 1, 1, 1, 1]))
-print(least_frequent_number([4, 2, 4, 1, 3, 2, 1]))
