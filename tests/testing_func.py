@@ -1,18 +1,11 @@
-def least_frequent_number(data):
-	max_value = max(data)
-
+def count_beautiful_pairs(nums):
+	max_value = max(nums)
 	counts = [0] * (max_value + 1)
-	
-	for element in data:
+
+	for element in nums:
 		counts[element] += 1
-		
-	min_value = max(counts)
+	res = 0
+	for i in counts:
+		res += i // 2
 
-	for num in counts:
-		if num > 0 and num < min_value:
-			min_value = num
-			
-	return counts.index(min_value)
-
-print(least_frequent_number([1, 1, 1, 1, 1]))
-print(least_frequent_number([4, 2, 4, 1, 3, 2, 1]))
+	return res
