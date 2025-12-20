@@ -10,3 +10,10 @@ def sort_binary_list(nums):
         for _ in range(counts[num]):
             nums[index] = num
             index += 1
+
+
+    return counts
+
+binary_list = [0, 1]
+sort_binary_list(binary_list)
+print(binary_list)
