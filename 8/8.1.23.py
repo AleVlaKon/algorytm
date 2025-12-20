@@ -11,3 +11,8 @@ def sort_by_index(nums):
             if condition(nums[j], nums[key_index]):
                 key_index = j
         nums[i], nums[key_index] = nums[key_index], nums[i]
+
+
+nums = [1, 3, 5, 7]
+sort_by_index(nums)
+print(nums)
