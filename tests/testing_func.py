@@ -1,13 +1,7 @@
-def sort_binary_list(nums):
-    counts = [0, 0]
+from collections import Counter
 
-    for element in nums:
-        counts[element] += 1
-
-    index = 0
-
-    for num in (0, 1):
-        for _ in range(counts[num]):
-            nums[index] = num
-            index += 1
-
+def is_subset(s1, s2):
+    counts1 = Counter(s1)
+    counts2 = Counter(s2)
+    
+    return counts1 <= counts2
