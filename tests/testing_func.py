@@ -1,13 +1,9 @@
-from collections import Counter
+from itertools import accumulate
+from operator import mul
 
+def product_in_segments(nums, segments):
+    total = list(accumulate(nums, mul, initial=1))
 
-def sort_limited_numbers(data):
-    min_value, max_value = min(data), max(data)
-    counts = Counter(data)  # быстрое создание и заполнение вспомогательного словаря
+    result = [total[r + 1] // total[l] for l, r in segments]
 
-    index = 0
-
-    for num in range(max_value, min_value - 1, -1):
-        for _ in range(counts.get(num, 0)):
-            data[index] = num
-            index += 1
+    return result
