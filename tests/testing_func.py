@@ -1,3 +1,13 @@
-def restore_by_prefix_sum(p: list) -> list[int]:
-    result = [p[i] - p[i - 1] for i in range(1, len(p))]
-    return result
+from itertools import accumulate
+
+
+def min_valid_index(nums, k, m):
+    total = list(accumulate(nums, initial=0))
+
+    for i in range(len(nums) - k):
+        if total[i + k + 1] - total[i] == m:
+            return i
+
+    return -1
+
+
