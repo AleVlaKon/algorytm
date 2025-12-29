@@ -10,3 +10,5 @@ def zeros_in_segments(nums, segments):
     result = [list_zeros[r + 1] - list_zeros[l] for l, r in segments]
 
     return result
+
+print(zeros_in_segments([0], [(0, 0)]))
