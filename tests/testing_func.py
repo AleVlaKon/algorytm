@@ -1,11 +1,15 @@
-from collections import Counter
-
-def count_pairs(nums):
-    data = Counter(nums)
+from itertools import accumulate
 
 
-    total_pairs = 0
-    for count in data.values():
-        total_pairs += count * (count + 1) // 2
+def difference_list(nums):
+    total = list(accumulate(nums, initial=0))
+    result = []
 
-    return total_pairs
+    for i in range(1, len(total)):
+        last = len(total) - 1
+        sum_right = total[last] - total[i]
+        sum_left = total[i - 1]
+        result.append(abs(sum_left - sum_right))
+
+
+    return result
