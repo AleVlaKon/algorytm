@@ -10,3 +10,6 @@ def valid_nums_in_segments(nums, segments):
     result = [list_zeros[r + 1] - list_zeros[l + 1] for l, r in segments]
 
     return result
+
+
+print(valid_nums_in_segments([4, 8, 9, 5, 4, 3, 2, 5], [(0, 3), (2, 5), (5, 7)]))
