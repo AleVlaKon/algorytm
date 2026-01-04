@@ -14,3 +14,11 @@ def difference_list(nums):
 
     result = [sum_left[i] + sum_right[i] for i in range(n)]
     return result
+
+
+print(difference_list([1, 4, 6]))
+print(difference_list([1, 2]))
+print(difference_list([1, 1, 1, 1]))
+print(difference_list([10, 20, 30]))
+print(difference_list([1, 2, 3, 4, 5]))
+print(difference_list([1, 1, 2, 2, 3, 3]))
