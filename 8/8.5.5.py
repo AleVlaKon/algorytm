@@ -10,5 +10,6 @@ def key_sort(num: int):
     return count_digit, -abs_num
 
 
-def sort_by_length_and_value(nums: list[int]):
-    nums.sort(reverse=True, key=key_sort)
+nums = [8, 13, 183, 9, 26, 229]
+sort_by_length_and_value(nums)
+print(nums)
