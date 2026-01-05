@@ -18,3 +18,8 @@ def key_sort(num):
 
 def holey_sort(nums):
     nums.sort(key=key_sort)
+
+
+nums = [-8, 0, -9, -6]
+holey_sort(nums)
+print(nums)
