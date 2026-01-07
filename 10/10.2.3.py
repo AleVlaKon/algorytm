@@ -19,3 +19,9 @@ def count_pythagorean_triplets(nums1, nums2, nums3):
         counter += first_dict[key] * second_dict[key]
     
     return counter
+
+
+print(count_pythagorean_triplets([2, 3, 4], [4, 3], [3, 5]))       # (3, 4, 5), (4, 3, 5)
+
+print(count_pythagorean_triplets([-1, 0, 5], [-2, 1, 3], [4]))
+print(count_pythagorean_triplets([-3], [-4], [-5])) 
