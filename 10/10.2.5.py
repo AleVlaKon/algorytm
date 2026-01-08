@@ -16,3 +16,7 @@ def count_triplets_with_sum(nums1, nums2, nums3, k):
         count += first_dict[k] * second_dict[k]
 
     return count
+
+
+print(count_triplets_with_sum([1, 2], [0, 1], [3, 4], 5))
+print(count_triplets_with_sum([1], [1], [1], 3)) 
