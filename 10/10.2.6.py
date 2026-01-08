@@ -11,6 +11,9 @@ def radix_sum(n):
             sum_digit += last
             a //= 10
         first_dict[sum_digit] += 1
+    
+
+    print(first_dict[0], first_dict[1], first_dict[2])
 
     count = 0
     for k in first_dict:
@@ -20,3 +23,6 @@ def radix_sum(n):
             count += first_dict[k] * first_dict[k2]
 
     return count
+
+print(radix_sum(1))         
+print(radix_sum(2))
