@@ -8,3 +8,11 @@ def move_zeros(nums: list[int]):
     while k < len(nums):
         nums[k] = 0
         k += 1
+    
+
+
+
+nums = [0, 2, 0, 0, 1]
+move_zeros(nums)
+print(nums)
+
