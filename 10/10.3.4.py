@@ -1,14 +1,10 @@
 def move_zeros(nums: list[int]):
-    k = 0
-    for i in range(len(nums)):
-        if nums[i] != 0:
-            nums[k] = nums[i]
-            k += 1
-        
-    while k < len(nums):
-        nums[k] = 0
-        k += 1
-    
+   left = 0
+
+   for right in range(len(nums)):
+      if nums[right] != 0:
+         nums[left], nums[right] = nums[right], nums[left]
+         left += 1
 
 
 
