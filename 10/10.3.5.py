@@ -22,3 +22,8 @@ def sort_half_sorted(nums):
         right1 += 1
 
     return res
+
+
+print(sort_half_sorted([1, 2, 3, 4, 5]))
+# print(sort_half_sorted([1, 2, 3, 4]))
+# print(sort_half_sorted([1, 2, 3, 4, 5]))
