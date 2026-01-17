@@ -1,26 +1,30 @@
-def _merge_sorted_lists(nums1, nums2):
-    result = []
-    i = j = 0
-
-    while i < len(nums1) and j < len(nums2):
-        if nums1[i] < nums2[j]:
-            result.append(nums1[i])
-            i += 1
-        else:
-            result.append(nums2[j])
-            j += 1
-
-    while i < len(nums1):
-        result.append(nums1[i])
-        i += 1
-
-    while j < len(nums2):
-        result.append(nums2[j])
-        j += 1
-
-    return result
-
-
 def merge_sorted_lists(nums1, nums2, nums3):
-    res = _merge_sorted_lists(nums1, nums2)
-    return _merge_sorted_lists(res, nums3)
+    i1, i2, i3 = 0, 0, 0
+    n1, n2, n3 = len(nums1), len(nums2), len(nums3)
+    res = []
+
+    while i1 < n1 or i2 < n2 or i3 < n3:
+        val1 = val2 = val3 = float('inf')
+
+        if i1 < n1:
+            val1 = nums1[i1]
+
+        if i2 < n2:
+            val2 = nums2[i2]
+
+        if i3 < n3:
+            val3 = nums3[i3]
+
+        if val1 <= val2 and val1 <= val3:
+            res.append(val1)
+            i1 += 1
+
+        elif val2 <= val3 and val1 <= val1:
+            res.append(val2)
+            i2 += 1
+
+        else:
+            res.append(val3)
+            i3 += 1
+
+    return res
