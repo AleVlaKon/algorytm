@@ -10,3 +10,8 @@ def alternate_order(nums: list[int]) -> list[int]:
         res.pop()
 
     return res
+
+
+print(alternate_order([1, 2, 3, 4, 5, 6]))
+print(alternate_order([2, 8, 6, 0, 4]))
+print(alternate_order([1]))
