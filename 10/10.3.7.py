@@ -16,3 +16,8 @@ def card_game_results(nums: list[int]):
             right -= 1
 
     return res["Timur"], res["Artur"]
+
+print(card_game_results([6, 2, 1, 5, 3, 4]))
+print(card_game_results([3, 5, 1, 4, 2]))
+print(card_game_results([1]))
+print(card_game_results([10, 9, 8, 7, 6, 5, 4, 3, 2, 1]))
