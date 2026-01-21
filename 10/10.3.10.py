@@ -8,16 +8,20 @@ def is_almost_palindrome(s: str):
         if data[left] == data[right]:
             left += 1
             right -= 1
-        elif data[right] == data[left + 1]:
-            left += 1
-            counter += 1
         elif data[left] == data[right - 1]:
             right -= 1
+            counter += 1
+        elif data[right] == data[left + 1]:
+            left += 1
             counter += 1
         else:
             return False
 
-    return counter <= 1
+        # if counter > 1:
+        #     return False
+    
+    return counter == 1
 
-
-# print(is_almost_palindrome('ldlld'))
+print(is_almost_palindrome('abca'))
+print(is_almost_palindrome('abcddba'))    # abddba
+print(is_almost_palindrome('spyder'))
