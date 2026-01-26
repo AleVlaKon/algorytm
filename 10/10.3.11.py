@@ -12,3 +12,10 @@ def could_type(word, typed):
         else:
             return False
     return True
+
+
+
+print(could_type('beegeek', 'geekbee'))
+print(could_type('python', 'pyytttthonnn'))
+
+
