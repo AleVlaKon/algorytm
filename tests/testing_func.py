@@ -1,14 +1,21 @@
 def could_type(word, typed):
-    left_word = 0
-    left_typed = 0
-
-
-    while left_typed < len(typed) - 1:
-        if word[left_word] == typed[left_typed] and word[left_word] == typed[left_typed + 1]:
-            left_typed += 1
-        elif word[left_word] == typed[left_typed] and word[left_word] != typed[left_typed + 1]:
-            left_typed += 1
-            left_word += 1
+    i = 0  
+    j = 0  
+    
+    while j < len(typed):
+        if i == len(word):
+            if typed[j] == word[-1]:
+                j += 1
+            else:
+                return False
+        elif word[i] == typed[j]:
+            i += 1
+            j += 1
+        elif typed[j] == word[i - 1]:
+            j += 1
         else:
             return False
-    return True
+    
+    return i == len(word)
+
+
