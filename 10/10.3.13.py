@@ -12,3 +12,6 @@ def min_original_size(nums: str) -> int:
     start_len = right - left + 1
 
     return start_len
+
+print(min_original_size('1'))        # 1111001
+
