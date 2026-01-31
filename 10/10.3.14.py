@@ -11,6 +11,7 @@ def duplicate_zeros(nums: list[int]) -> list[int]:
     for i in nums:
         if i == 0:
             count += 1
+    print(count)
 
     count = len(nums) - count
 
@@ -18,7 +19,8 @@ def duplicate_zeros(nums: list[int]) -> list[int]:
     write = len(nums) - 1
 
     while read >= 0:
-
+        nums_read = nums[read]
+        nums_write = nums[write]
         if nums[read] == 0:
             if write < len(nums):
                 nums[write] = 0
@@ -32,3 +34,10 @@ def duplicate_zeros(nums: list[int]) -> list[int]:
             write -= 1
 
         read -= 1
+
+
+
+
+nums = [1, 2, 3, 0, 0]
+duplicate_zeros(nums)
+print(nums)
