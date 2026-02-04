@@ -1,4 +1,4 @@
-def duplicate_zeros(nums: list[int]) -> list[int]:
+def duplicate_zeros(nums: list[int]) -> None:
     '''
     1. Высчитываем индекс последнего элемента, который будет в списке
     (длина списка - количество нулей)
@@ -12,13 +12,20 @@ def duplicate_zeros(nums: list[int]) -> list[int]:
         if i == 0:
             count += 1
 
+    # if nums[-1] == 0:
+        # count -= 1
+
+    # if nums[-2] == 0:
+    #     count -= 1
+
     count = len(nums) - count
 
     read = count - 1
     write = len(nums) - 1
 
     while read >= 0:
-
+        nums_read = nums[read]
+        nums_write = nums[write]
         if nums[read] == 0:
             if write < len(nums):
                 nums[write] = 0
