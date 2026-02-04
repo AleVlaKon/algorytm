@@ -1,3 +1,6 @@
+from sys import orig_argv
+
+
 def duplicate_zeros(nums: list[int]) -> None:
     '''
     1. Высчитываем индекс последнего элемента, который будет в списке
@@ -6,41 +9,23 @@ def duplicate_zeros(nums: list[int]) -> None:
     3. Если элемент == 0 - вставляем 2 нуля,
        иначе вставляем элемент
     '''
-    count = 0
+    len_nums = len(nums)
+    len_write = len_nums + nums.count(0)
 
-    for i in nums:
-        if i == 0:
-            count += 1
-    print(count)
+    i = len_nums - 1
+    j = len_write - 1
+    
+    while i >= 0:
+        if j < len_nums:
+            nums[j] = nums[i]
 
-    # if nums[-1] == 0:
-    #     count -= 1
+        if nums[i] == 0:
+            j -= 1
+            if j <= len_nums:
+                nums[j] = 0
 
-    if nums[-2] == 0:
-        count -= 1
-
-    count = len(nums) - count
-
-    read = count - 1
-    write = len(nums) - 1
-
-    while read >= 0:
-        nums_read = nums[read]
-        nums_write = nums[write]
-        if nums[read] == 0:
-            if write < len(nums):
-                nums[write] = 0
-                write -= 1
-            if write < len(nums):
-                nums[write] = 0
-                write -= 1
-        else:
-            if write < len(nums):
-                nums[write] = nums[read]
-            write -= 1
-
-        read -= 1
-
+        i -= 1
+        j -= 1
 
 
 nums = [3, 0, 2, 7, 0, 1, 4, 5]
