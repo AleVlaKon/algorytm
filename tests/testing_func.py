@@ -1,21 +1,14 @@
-def could_type(word, typed):
-    i = 0  
-    j = 0  
-    
-    while j < len(typed):
-        if i == len(word):
-            if typed[j] == word[-1]:
-                j += 1
-            else:
-                return False
-        elif word[i] == typed[j]:
-            i += 1
-            j += 1
-        elif typed[j] == word[i - 1]:
-            j += 1
+def is_flippable_number(num: str):
+    left = 0
+    right = len(num) - 1
+
+    while left <= right:
+        l, r = num[left], num[right]
+
+        if (l, r) == ('6', '9') or (l, r) == ('9', '6') or (l, r) == ('0', '0'):
+            left += 1
+            right -= 1
         else:
             return False
-    
-    return i == len(word)
-
-
+        
+    return True
