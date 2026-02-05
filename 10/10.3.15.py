@@ -15,3 +15,8 @@ def sort_numbers_from_one_to_three(nums: list[int]) -> None:
         elif nums[current] == 3:
             nums[right], nums[current] = nums[current], nums[right]
             right -= 1
+
+nums = [2, 1, 3, 1, 3, 1, 3, 3]
+sort_numbers_from_one_to_three(nums)
+print(nums)
+        
