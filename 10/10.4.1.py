@@ -13,3 +13,8 @@ def smallest_palindrome(s: str) -> str:
         right -= 1
 
     return ''.join(data)
+
+
+print(smallest_palindrome('beegeek'))
+print(smallest_palindrome('pygen'))
+print(smallest_palindrome('abcd'))
