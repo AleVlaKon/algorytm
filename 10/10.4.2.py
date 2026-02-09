@@ -17,3 +17,6 @@ def has_triplet_with_zero_sum(nums: list[int]) -> bool:
                 return True
 
     return False
+
+
+print(has_triplet_with_zero_sum([-3, -2, 4, 2, 1]))
