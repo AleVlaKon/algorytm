@@ -1,18 +1,22 @@
-def count_pairs_with_greater_difference(nums: list[int], k: int) -> int:
-    left1 = 0
-    left2 = 0
-
-    while left2 < len(nums) - 1 and nums[left2] - nums[left1] < k:
-        left2 += 1
+def count_pairs_with_greater_difference(nums, k):
+    n = len(nums)
+    total_pairs = 0
+    j = 0
+    
+    for i in range(n):
+        # Увеличиваем j, пока не найдем первый элемент с разностью > k
+        # или пока j не выйдет за границы массива
+        while j < n and nums[j] - nums[i] <= k:
+            j += 1
         
-
-    while left1 < len(nums) - 1 and nums[left2] - nums[left1] > k:
-        left1 += 1
-
-    pairs = (left1 + 1) * (len(nums) - left2) - 1
-    return pairs
-
-
+        # Если j не вышел за границы, все элементы от j до конца подходят
+        if j < n:
+            total_pairs += n - j
+        else:
+            # Для всех последующих i тоже не будет подходящих j
+            break
+    
+    return total_pairs
 
 nums = [1, 3, 5, 7]
 print(count_pairs_with_greater_difference(nums, 0))    # (1, 3), (1, 5), (1, 7), (3, 5), (3, 7), (5, 7)

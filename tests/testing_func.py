@@ -1,19 +1,19 @@
-def has_triplet_with_zero_sum(nums: list[int]) -> bool:
-    nums.sort()
+def count_pairs_with_greater_difference(nums, k):
     n = len(nums)
-
+    total_pairs = 0
+    j = 0
+    
     for i in range(n):
-        target = -nums[i]
-        left = i + 1
-        right = n - 1
-
-        while left < right:
-            sum_left_right = nums[left] + nums[right]
-            if target < sum_left_right:
-                right -= 1
-            elif target > sum_left_right:
-                left += 1
-            else:
-                return True
-
-    return False
+        # Увеличиваем j, пока не найдем первый элемент с разностью > k
+        # или пока j не выйдет за границы массива
+        while j < n and nums[j] - nums[i] <= k:
+            j += 1
+        
+        # Если j не вышел за границы, все элементы от j до конца подходят
+        if j < n:
+            total_pairs += n - j
+        else:
+            # Для всех последующих i тоже не будет подходящих j
+            break
+    
+    return total_pairs
