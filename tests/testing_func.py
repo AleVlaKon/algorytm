@@ -1,19 +1,17 @@
-def has_triplet_with_zero_sum(nums: list[int]) -> bool:
-    nums.sort()
-    n = len(nums)
+def min_difference(nums1, nums2):
+    nums1.sort()
+    nums2.sort()
 
-    for i in range(n):
-        target = -nums[i]
-        left = i + 1
-        right = n - 1
 
-        while left < right:
-            sum_left_right = nums[left] + nums[right]
-            if target < sum_left_right:
-                right -= 1
-            elif target > sum_left_right:
-                left += 1
-            else:
-                return True
+    left1, left2 = 0, 0
+    min_diff = float('inf')
 
-    return False
+    while left1 < len(nums1) and left2 < len(nums2):
+        if abs(nums1[left1] - nums2[left2]) < min_diff:
+            min_diff = abs(nums1[left1] - nums2[left2])
+        if nums1[left1] < nums2[left2]:
+            left1 += 1
+        else:
+            left2 += 1
+
+    return min_diff

@@ -2,19 +2,21 @@ def min_difference(nums1, nums2):
     nums1.sort()
     nums2.sort()
 
-    left = 0
-    right = len(nums2) - 1
+
+    left1, left2 = 0, 0
     min_diff = float('inf')
-    min1 = 0
-    min2 = 0
 
-    while left < len(nums1) and right > 0:
-        if nums1[left] > nums2[right]:
-            left += 1
+    while left1 < len(nums1) and left2 < len(nums2):
+        if abs(nums1[left1] - nums2[left2]) < min_diff:
+            min_diff = abs(nums1[left1] - nums2[left2])
+        if nums1[left1] < nums2[left2]:
+            left1 += 1
         else:
-            right -= 1
+            left2 += 1
+
+    return min_diff
 
 
 
 
-print(min_difference([4, 1, 5], [8, 11, 9, 10]))    # (5, 8) 
+print(min_difference([6, 4, 5], [3, 1, 5, 8]))      # (5, 5)
