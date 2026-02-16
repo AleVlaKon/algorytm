@@ -1,32 +1,27 @@
-from typing import List, Optional, Tuple
+def max_average_sublist(nums, k):
+    left = 1
+    right = k
+    max_avg = 0
+    cur_avg = 0
 
-def pair_with_lower_or_equal_difference(nums, k):
-    n = len(nums)
-    if n < 2:
-        return None
+    for i in range(k):
+        max_avg += nums[i]
+        cur_avg += nums[i]
 
-    l = 0
-    best_pair = None
-    best_diff = -1
+    while right < len(nums):
+        cur_avg = cur_avg + nums[right] - nums[left - 1]
+        max_avg = max(max_avg, cur_avg)
+        left += 1
+        right += 1
 
-    for r in range(1, n):
-        # сдвигаем левый указатель, пока разность слишком большая
-        while l < r and nums[r] - nums[l] > k:
-            l += 1
-        if l == r:
-            continue
+    return max_avg / k
 
-        diff = nums[r] - nums[l]
-
-        if best_pair is None:
-            best_pair = (nums[l], nums[r])
-            best_diff = diff
-        else:
-            cur_min, cur_max = best_pair
-            if diff > best_diff:
-                best_diff = diff
-                best_pair = (nums[l], nums[r])
-            elif diff == best_diff and nums[l] < cur_min:
-                best_pair = (nums[l], nums[r])
-
-    return best_pair
+# print(max_average_sublist([2, 1, 5, 3, 1, 4], 3))    # (1 + 5 + 3) / 3 = 3-3.0]
+# print(max_average_sublist([2, 1, 5, 3, 1, 4], 3))    # (1 + 5 + 3) / 3 = 3
+# print(max_average_sublist([4, -1, 3, -2, 7, 5], 4))  # (3 - 2 + 7 + 5) / 4 = 3.25
+# print(max_average_sublist([-3, -5, -2, -3, -4], 2))  # (-5 - 2) / 2 = -2.5', expected = '-2.5'
+# print(max_average_sublist([0, -1], 2)) #', expected = '-0.5'
+# print(max_average_sublist([-1, 0, 1], 3))            # (-1 + 0 + 1) / 3 = 0.0
+# print(max_average_sublist([-3, -5, -2, -3, -4], 2))  # (-2 - 3) / 2 = -2.5
+# print(max_average_sublist([5], 1))                   # 5 / 1 = 5.0
+# print(max_average_sublist([4, -1, 3, -2, 7, 5], 4))  # (3 - 2 + 7 + 5) / 4 = 3.25
