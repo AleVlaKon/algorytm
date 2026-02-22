@@ -1,12 +1,18 @@
-def count_pairs_with_greater_difference(nums, k):
-    left, right, count = 0, 0, 0
+def shortest_sublist_with_greater_sum(nums, k):
+    left = 0
+    right = 0
+    subspisok_lengh = float('inf')
+    cur_sum = 0
     n = len(nums)
 
     while right < n:
-        if nums[right] - nums[left] > k:
-            count += n - right
+        cur_sum += nums[right]
+        
+        while cur_sum > k:
+            subspisok_lengh = min(subspisok_lengh, right - left + 1)
+            cur_sum -= nums[left]
             left += 1
-        else:
-            right += 1
 
-    return count
+        right += 1
+
+    return subspisok_lengh if subspisok_lengh != float('inf') else -1
