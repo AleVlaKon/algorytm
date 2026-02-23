@@ -1,11 +1,11 @@
 def has_duplicates_within_range(nums, k):
     left = 0
-    right = k - 1
-    diapazon = set(nums[:k - 1])
-    print(left, right, diapazon)
+    right = k
+    diapazon = nums[:k]
+    # print(left, right, diapazon)
     n = len(nums)
 
-    if len(diapazon) < len(nums[:k - 1]):
+    if len(diapazon) != len(set(diapazon)):
         return True
 
     while right < n:
@@ -14,15 +14,17 @@ def has_duplicates_within_range(nums, k):
         if right_elem in diapazon:
             return True
         else:
-            diapazon.add(right_elem)
-            diapazon.remove(left_elem)
+            diapazon.append(right_elem)
+            diapazon.pop(0)
             left += 1
             right += 1
     
     return False
 
 
-# print(has_duplicates_within_range([3, 1, 5, -4, 5, 2], 3))    # дубликаты: 5
-# print(has_duplicates_within_range([1, 1, 5, -4, 2, 5], 3))    # дубликаты: 1, 5
-# print(has_duplicates_within_range([5, 1, 3, -4, 2, 5], 3))    # дубликатов нет
+print(has_duplicates_within_range([3, 1, 5, -4, 5, 2], 3))    # дубликаты: 5
+print(has_duplicates_within_range([1, 1, 5, -4, 2, 5], 3))    # дубликаты: 1, 5
+print(has_duplicates_within_range([5, 1, 3, -4, 2, 5], 3))    # дубликатов нет
 print(has_duplicates_within_range([-2, -1, -2, -1], 2))       # дубликаты: -2, -1
+print(has_duplicates_within_range([2], 1))  
+print(has_duplicates_within_range([6, 5, 6, 5], 1))           # дубликатов нет
