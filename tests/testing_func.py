@@ -1,18 +1,22 @@
-def shortest_sublist_with_greater_sum(nums, k):
+def has_duplicates_within_range(nums, k):
     left = 0
-    right = 0
-    subspisok_lengh = float('inf')
-    cur_sum = 0
+    right = k
+    diapazon = set(nums[:k])
+    # print(left, right, diapazon)
     n = len(nums)
 
+    if len(diapazon) < len(nums[:k]):
+        return True
+
     while right < n:
-        cur_sum += nums[right]
-        
-        while cur_sum > k:
-            subspisok_lengh = min(subspisok_lengh, right - left + 1)
-            cur_sum -= nums[left]
+        left_elem = nums[left]
+        right_elem = nums[right]
+        if right_elem in diapazon:
+            return True
+        else:
+            diapazon.add(right_elem)
+            diapazon.remove(left_elem)
             left += 1
+            right += 1
 
-        right += 1
-
-    return subspisok_lengh if subspisok_lengh != float('inf') else -1
+    return False
