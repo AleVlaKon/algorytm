@@ -11,6 +11,9 @@ def uniques_count_in_every_sublist(nums, k):
 
     res = [len(diapazon)]
 
+    if len(diapazon) < len(nums[:k]):
+        return True
+
     while right < n:
         left_elem = nums[left]
         diapazon[left_elem] -= 1
