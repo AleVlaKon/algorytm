@@ -1,17 +1,13 @@
-from logger import setup_logging
-import time
+nums = [1, 2, 3, 4, 5, 6]
 
-logger = setup_logging()
+# for i in range(len(nums)):
+#     print(nums[:i],'---', nums[i], '---', nums[i+1:])
 
-def logger_test():
-    logger.info("Запрос 1 успешен")
-    time.sleep(0.5)
-    logger.info("Запрос 2 успешен")
-    time.sleep(0.5)
-    logger.info("Запрос 3 успешен")
-    time.sleep(0.5)
-    logger.info("Запрос 4 успешен")
-    time.sleep(0.5)
+# print(nums[len(nums) - 1:])
 
 
-logger_test()
+n = len(nums)
+for i in range(n):
+    element = nums[i]
+
+    
