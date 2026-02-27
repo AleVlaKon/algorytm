@@ -1,30 +1,29 @@
-from collections import defaultdict
-
-def uniques_count_in_every_sublist(nums, k):
+def binary_search(nums, k):
     left = 0
-    right = k
+    right = len(nums) - 1
+
+    while left <= right:
+        middle_idx = (left + right) // 2
+        center_elem = nums[middle_idx]
+
+        if k == center_elem:
+            return middle_idx
+        if k > center_elem:
+            left = middle_idx + 1
+        if k < center_elem:
+            right = middle_idx - 1
+
+    return left
+
+
+def binary_insertion_sort(nums):
     n = len(nums)
-    diapazon = defaultdict(int) 
 
-    for i in range(k):
-        diapazon[nums[i]] += 1
+    for i in range(n):
+        element = nums[i]
+        incert_position = binary_search(nums[:i], element)
 
-    res = [len(diapazon)]
+        for j in range(i - 1, incert_position - 1, -1):
+            nums[j + 1] = nums[j]
 
-    if len(diapazon) < len(nums[:k]):
-        return True
-
-    while right < n:
-        left_elem = nums[left]
-        diapazon[left_elem] -= 1
-        if diapazon[left_elem] == 0:
-            del diapazon[left_elem]
-
-        right_elem = nums[right]
-        diapazon[right_elem] += 1
-        res.append(len(diapazon))
-        
-        left += 1
-        right += 1
-
-    return res
+        nums[incert_position] = element

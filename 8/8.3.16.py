@@ -31,15 +31,15 @@ def binary_insertion_sort(nums):
         element = nums[i]
         incert_position = binary_search(nums[:i], element)
 
-        for j in range(incert_position + 1, i - 1, -1):
+        for j in range(i - 1, incert_position - 1, -1):
             nums[j + 1] = nums[j]
+
 
         nums[incert_position] = element
             
-nums = [3, 4, 1, 2, 5]
+nums = [3, 2, 2, 1, 3, 3]
 binary_insertion_sort(nums)
 print(nums)
-
 
         
         
