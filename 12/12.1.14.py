@@ -16,4 +16,5 @@ def diagonal_sum(matrix: list) -> int:
 matrix = [[1, 2, 3],
           [6, 5, 4],
           [7, 8, 9]]
-print(diagonal_sum(matrix))
+          
+print(diagonal_sum(matrix))    # 1 + 5 + 9 + 3 + 7 = 25
