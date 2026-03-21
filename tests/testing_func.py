@@ -1,19 +1,10 @@
-def diagonal_sum(matrix: list) -> int:
+def is_symmetric(matrix):
     n = len(matrix)
-    result = 0
 
     for i in range(n):
-        result += matrix[i][i]
-        result += matrix[n - i - 1][i]
-
-    if n % 2 == 1:
-        middle = n // 2
-        result -= matrix[middle][middle]
-    
-    return result
-
-
-matrix = [[1, 2, 3],
-          [6, 5, 4],
-          [7, 8, 9]]
-print(diagonal_sum(matrix))
+        for j in range(n):
+            if i == j:
+                continue
+            if matrix[i][j] != matrix[j][i]:
+                return False
+    return True
