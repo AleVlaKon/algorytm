@@ -21,3 +21,5 @@ def has_triplet_sum(nums):
                 right -= 1
 
     return False
+                
+print(has_triplet_sum([10, 1, 5, 2, 2]))
